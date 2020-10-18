@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div.center-content
+    div.center-form-container.flex-center.flex-column.margin-top-bottom
+      form.flex-center.flex-column(method="POST" action="")
+        label(for="username") Username
+        input.margin-top-bottom(name="username" type="text" placeholder="Username..." required="true")
+        label(for="password") Password
+        input.margin-top-bottom(name="password" type="password" placeholder="Password..." required="true")
+        button(class="btn btn-wide margin-top-bottom" type="submit") Submit
+
