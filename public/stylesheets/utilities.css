@@ -1,0 +1,132 @@
+/* Flex utility classes */
+.flex-center {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+/* Grid utility classes */
+/* Used to setup grids for the accessories and items lists */
+.grid-list {
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
+.grid-list-col {
+  grid-template-columns: auto auto auto;
+  /* grid-column: auto/span 2; */
+}
+
+/* Justify utility classes */
+.justify-center {
+  justify-content: center;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Align items */
+.align-center {
+  align-items: center;
+}
+
+.btn {
+  height: 2rem;
+  width: 5rem;
+  border: none;
+  border-radius: 20px;
+  background: #1d800e;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: all ease 0.5s;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  letter-spacing: 2px;
+}
+
+.btn-wide {
+  width: 10rem;
+}
+
+.btn-wider {
+  width: 13rem;
+}
+
+.delete-btn {
+  background: coral;
+}
+
+/* Margin utils */
+.margin-top-bottom {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.margin-top-bottom-small {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.margin-left-right {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.margin-left-right-small {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* Text classes */
+
+.low-font-weight {
+  font-weight: 200;
+}
+
+.high-font-weight {
+  font-weight: 800;
+}
+
+.label-size {
+  font-size: 1.5rem;
+}
+
+.error-message {
+  color: darkred;
+}
+
+/* .stock-text {
+    font-size: 1.3rem;
+    font-weight: 800;
+  } */
+
+/* Border classes */
+.no-border {
+  border: none;
+}
+
+.border-radius {
+  border-radius: 20px;
+}

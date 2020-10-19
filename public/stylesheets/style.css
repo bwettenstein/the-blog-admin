@@ -1,8 +1,74 @@
+@import 'utilities.css';
+
+:root {
+  --white: #fff;
+  --fb-blue: #3b5998;
+  --turquoise: #004c66;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background: #d3d3d3;
 }
 
 a {
-  color: #00B7FF;
+  /* color: #00b7ff; */
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+a:focus {
+  outline: none;
+}
+
+nav {
+  position: sticky;
+  color: var(--white);
+  background: var(--turquoise);
+  padding: 1rem;
+  min-height: 10vh;
+  height: auto;
+  max-height: 15vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav-left h1 {
+  font-size: 2.5rem;
+}
+
+.nav-left h1,
+.nav-right h1 {
+  color: var(--white);
+}
+
+.center-container {
+  height: 100vh;
+  width: 100vw;
+  /* Background might change to white instead of light */
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+input {
+  height: 2rem;
+  width: 15rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
 }

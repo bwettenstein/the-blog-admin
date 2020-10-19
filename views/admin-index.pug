@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  nav.flex-center.justify-between
+      div.nav-left.margin-left-right
+        a.margin-left-right(href="/")
+          h1 The Blog (Admin)
+      div.nav-right.flex-center.margin-left-right
+        a.margin-left-right.small(href="/admin/messages/create")
+          h1 Create a Message
+        a.margin-left-right.small(href="/admin/messages")
+          h1 View messages
+        a.margin-left-right.small(href="/admin/messages/comments")
+          h1 View Comments
+        
+  div.center-content
+    h1 worked
+

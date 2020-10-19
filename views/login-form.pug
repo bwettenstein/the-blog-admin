@@ -1,6 +1,23 @@
 extends layout
 
 block content
+  nav.flex-center.justify-between
+      div.nav-left.margin-left-right
+        a.margin-left-right(href="/")
+          h1 The Blog (Admin)
+      //- div.nav-right.flex-center.margin-left-right
+      //-   if user 
+      //-     a.margin-left-right.small(href="/messages/create")
+      //-       h1 Create a Message
+      //-     a.margin-left-right.small(href="/users/change-membership")
+      //-       h1 Change membership
+      //-     a.margin-left-right.small(href="/users/log-out")
+      //-       h1 Log-Out
+      //-   else 
+      //-     a.margin-left-right.small(href="/users/log-in")
+      //-       h1 Log-In
+      //-     a.margin-left-right-small(href="/users/sign-up")
+      //-       h1 Sign-Up 
   div.center-content
     div.center-form-container.flex-center.flex-column.margin-top-bottom
       form.flex-center.flex-column(method="POST" action="")
