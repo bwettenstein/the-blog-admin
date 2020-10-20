@@ -2,8 +2,10 @@ const User = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// GET the user log in form
+// Returns instructions on logging in
 exports.userLoginGet = (req, res) => {
-  return;
+  return res.render('login-form');
 };
 
 // POST the user log in form
@@ -27,7 +29,7 @@ exports.userLoginPost = async (req, res) => {
     { _id: foundUser._id },
     process.env.ACCESS_TOKEN_SECRET,
     {
-      expiresIn: '20m',
+      // expiresIn: '20m',
     }
   );
   res.header('auth-token', token).redirect('/');
