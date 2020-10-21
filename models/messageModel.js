@@ -25,7 +25,7 @@ const MessageSchema = new Schema({
 });
 
 MessageSchema.virtual('url').get(function () {
-  return '/message-management/messages' + this._id;
+  return '/admin/message/' + this._id;
 });
 
 module.exports = mongoose.model('Message', MessageSchema);

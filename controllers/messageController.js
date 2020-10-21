@@ -6,13 +6,7 @@ const jwt = require('jsonwebtoken');
 // Returns the id, title, text, user, and timestamp in json
 exports.messageListGet = (req, res) => {
   Message.find({}, 'title text user', (err, results) => {
-    if (err) {
-      return res.json({
-        success: false,
-        message: err.message,
-      });
-    }
-    if (!results) {
+    if (err || !results) {
       return res.json({
         success: false,
         message: 'No messages found',
@@ -66,7 +60,27 @@ exports.createMessagePost = async (req, res) => {
   });
 };
 
-// User can change the message title or text.
+// Get a specific message
+// Returns the id, title, text, user, and timestamp in json
+exports.getMessageGet = async (req, res) => {
+  const messageId = req.params.id;
+  const foundMessage = await Message.findById(messageId);
+  if (foundMessage) {
+    return res.json({
+      success: true,
+      message: 'Message has been found',
+      foundMessage,
+      messageUrl: foundMessage.url,
+    });
+  } else {
+    return res.json({
+      success: false,
+      message: 'Message was not found. Check if message id is valid',
+    });
+  }
+};
+
+// User can change the message title or text by making a put request.
 // Requires the user to provide the updated title and text through headers
 // Edited title is sent through the header, 'message-title'
 // Edited text is sent through the header, 'message-text'
@@ -75,9 +89,9 @@ exports.editMessagePut = async (req, res) => {
   const messageId = req.params.id;
   messageTitle = req.header('message-title');
   messageText = req.header('message-text');
-  console.log(messageId, 'MESSAGE ID');
-  console.log(messageTitle, 'MESSAGE TITLE');
-  console.log(messageText, 'MESSAGE TEXT');
+  //   console.log(messageId, 'MESSAGE ID');
+  //   console.log(messageTitle, 'MESSAGE TITLE');
+  //   console.log(messageText, 'MESSAGE TEXT');
   if (messageId && messageTitle && messageText) {
     Message.findByIdAndUpdate(
       messageId,
@@ -87,10 +101,16 @@ exports.editMessagePut = async (req, res) => {
         timestamp: Date.now(),
       },
       (err, updatedMessage) => {
+        if (err) {
+          return res.json({
+            success: false,
+            message: err.message,
+          });
+        }
         return res.json({
           success: true,
           message: 'Successfully updated',
-          updatedMessage: updatedMessage,
+          updatedMessage,
         });
       }
     );
@@ -98,7 +118,24 @@ exports.editMessagePut = async (req, res) => {
     return res.json({
       success: false,
       message:
-        'Incorrect id and/or missing headers ("message-title" and "message-text" are required headers to edit a message)',
+        'Incorrect message id and/or missing headers ("message-title" and "message-text" are required headers to edit a message)',
     });
   }
+};
+
+exports.deleteMessageDelete = (req, res, next) => {
+  const messageId = req.params.id;
+  Message.findByIdAndDelete(messageId, (err, deletedMessage) => {
+    if (err) {
+      return res.json({
+        success: false,
+        message: 'Incorrect message id',
+      });
+    }
+    return res.json({
+      success: true,
+      message: 'Message has been deleted',
+      deletedMessage,
+    });
+  });
 };
