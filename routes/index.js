@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const indexController = require('../controllers/indexController');
 
-/* GET home page. */
+/* GET login page. */
 router.get('/', indexController.getLoginPage);
 
 // POST login info

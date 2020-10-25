@@ -26,11 +26,9 @@ exports.postLoginPage = async (req, res) => {
     { _id: foundUser._id },
     process.env.ACCESS_TOKEN_SECRET,
     {
-      expiresIn: '10m',
+      expiresIn: '20m',
     }
   );
-
-  // console.log(token, 'token');
 
   // Send token as header
   res.header('auth-token', token).json({

@@ -61,7 +61,7 @@ exports.createMessagePost = async (req, res) => {
 };
 
 // Get a specific message
-// Returns the id, title, text, user, and timestamp in json
+// Returns the id, title, text, user, timestamp, and its url in json
 exports.getMessageGet = async (req, res) => {
   const messageId = req.params.id;
   const foundMessage = await Message.findById(messageId);
@@ -85,6 +85,9 @@ exports.getMessageGet = async (req, res) => {
 // Edited title is sent through the header, 'message-title'
 // Edited text is sent through the header, 'message-text'
 // The timestamp will be updated to when the edit executed.
+// THINGS TO CHANGE:
+// Need to make it so the user doesn't have to put both endpoints in order to get this to work
+// For example, they shouldn't need to submit a message-text header if they just want to change the title
 exports.editMessagePut = async (req, res) => {
   const messageId = req.params.id;
   messageTitle = req.header('message-title');
