@@ -1,5 +1,13 @@
 # the-blog-admin
 
+## Description
+
+This is a REST API, at least to the best of my abilities, that allows admins to create and modify messages that are displayed on the front end blog site.
+
+## Stack and main packages
+
+Nodejs, Express, Mongoose, Jwt, bcrypt
+
 ## Documentation
 
 ### Index routes
