@@ -22,11 +22,11 @@ router.post('/create', messageController.createMessagePost);
 // PUT request
 // Verifies that the user sent the needed info
 // After verification, it updates the existing message with the updated content
-router.put('/:id/edit', messageController.editMessagePut);
+router.put('/:id', messageController.editMessagePut);
 
 // DELETE request
 // Verifies that the user sent the needed info
 // After verification, it removes the message from the database
-router.delete('/:id/delete', messageController.deleteMessageDelete);
+router.delete('/:id', messageController.deleteMessageDelete);
 
 module.exports = router;

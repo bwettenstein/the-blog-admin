@@ -60,7 +60,7 @@
 
 **Description** - Extracts the id of the user through the json web token. The id is used to create the message and sign the user as the author. Additionally, the message-title and message-text are checked to make sure they are provided. If they're not, the request won't go through and the user will be told to include the headers. If the headers are present, the message is saved to the database and a success message is sent back to the user in json.
 
-**Path** - '/admin/message/:message-id/edit'  
+**Path** - '/admin/message/:message-id'  
 **Request Type**- PUT  
 **Called method** - editMessagePut  
 **Authentication Needed** - Yes  
@@ -72,7 +72,7 @@
 
 **Description** - First verifies that the message-title and message-text headers are present, as well as the message-id in the url. If either field is missing, or incorrect in the case of the message-id, an response will be sent telling the user that something is missing. Once successfully verified, the message will be updated and saved. Upon success, the user will receive a response that includes a success message and the updated message.
 
-**Path** - '/admin/message/:message-id/delete'  
+**Path** - '/admin/message/:message-id'  
 **Request Type**- PUT  
 **Called method** - deleteMessageDelete  
 **Authentication Needed** - Yes  
