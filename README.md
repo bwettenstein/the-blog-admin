@@ -10,6 +10,10 @@ Nodejs, Express, Mongoose, Jwt, bcrypt
 
 ## Documentation
 
+### URL For Routes
+
+https://intense-forest-77371.herokuapp.com
+
 ### Index routes
 
 **Path** - '/'  
