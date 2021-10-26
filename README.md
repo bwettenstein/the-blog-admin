@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a REST API, at least to the best of my abilities, that allows admins to create and modify messages that are displayed on the front end blog site.
+This is a REST API, at least to the best of my abilities, that allows admins to create and modify messages that are displayed on the front end blog site. The front end site can be viewed at https://stark-castle-08736.herokuapp.com/
 
 ## Stack and main packages
 
